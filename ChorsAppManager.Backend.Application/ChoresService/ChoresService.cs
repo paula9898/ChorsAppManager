@@ -1,4 +1,5 @@
-﻿using ChorsAppManager.Backend.Model;
+﻿using ChorsAppManager.Backend.Application.Repository;
+using ChorsAppManager.Backend.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,19 @@ namespace ChorsAppManager.Backend.Application.ChoresService
 {
     public class ChoresService : IChoresService
     {
-        public ICollection<Chore> GetAllChores()
+        private readonly IRepository<Chore> _choreRepository;
+
+        public ChoresService(IRepository<Chore> choreRepository)
+        {
+            _choreRepository = choreRepository;
+        }
+
+        Task<ICollection<Chore>> IChoresService.GetAllChores()
         {
             throw new NotImplementedException();
         }
 
-        public Chore GetChoreById(int choreId)
+        Task<Chore> IChoresService.GetChoreById(int choreId)
         {
             throw new NotImplementedException();
         }
