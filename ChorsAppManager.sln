@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChorsAppManager.Backend.WebAPI", "ChorsAppManager\ChorsAppManager.Backend.WebAPI.csproj", "{F74EB37C-B8B3-449A-8322-21508EE1525B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChorsAppManager.Backend.Model", "ChorsAppManager.Backend.Entity\ChorsAppManager.Backend.Model.csproj", "{3853D285-87B3-4E16-86DB-84409C530DD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChorsAppManager.Backend.Application", "ChorsAppManager.Backend.Application\ChorsAppManager.Backend.Application.csproj", "{A898250E-55F6-4E61-A74D-95762D080085}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3853D285-87B3-4E16-86DB-84409C530DD0} = {3853D285-87B3-4E16-86DB-84409C530DD0}
+		{4B6C8542-463B-42A4-BD1F-5203D234CB4F} = {4B6C8542-463B-42A4-BD1F-5203D234CB4F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChorsAppManager.Backend.EntityFramework", "ChorsAppManager.Backend.EntityFramework\ChorsAppManager.Backend.EntityFramework.csproj", "{4B6C8542-463B-42A4-BD1F-5203D234CB4F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3853D285-87B3-4E16-86DB-84409C530DD0} = {3853D285-87B3-4E16-86DB-84409C530DD0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F74EB37C-B8B3-449A-8322-21508EE1525B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74EB37C-B8B3-449A-8322-21508EE1525B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74EB37C-B8B3-449A-8322-21508EE1525B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74EB37C-B8B3-449A-8322-21508EE1525B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3853D285-87B3-4E16-86DB-84409C530DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3853D285-87B3-4E16-86DB-84409C530DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3853D285-87B3-4E16-86DB-84409C530DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3853D285-87B3-4E16-86DB-84409C530DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A898250E-55F6-4E61-A74D-95762D080085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A898250E-55F6-4E61-A74D-95762D080085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A898250E-55F6-4E61-A74D-95762D080085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A898250E-55F6-4E61-A74D-95762D080085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B6C8542-463B-42A4-BD1F-5203D234CB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6C8542-463B-42A4-BD1F-5203D234CB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6C8542-463B-42A4-BD1F-5203D234CB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6C8542-463B-42A4-BD1F-5203D234CB4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C4F9F1B-FD57-4FF7-BA9B-603448ACA697}
+	EndGlobalSection
+EndGlobal
