@@ -1,3 +1,4 @@
+using ChorsAppManager.Backend.Application.ChoresServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChorsAppManager.Controllers
@@ -6,28 +7,26 @@ namespace ChorsAppManager.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        private readonly IChoresService _choreService;
 
+<<<<<<< Updated upstream:ChorsAppManager/Controllers/WeatherForecastController.cs
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
+=======
+        public ChoresController(IChoresService choresService)
+>>>>>>> Stashed changes:ChorsAppManager/Controllers/ChoresController.cs
         {
-            _logger = logger;
+            _choreService = choresService;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet("{id}")]
+
+        public async Task<IActionResult> GetChoreById(int id)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var chore = await _choreService.GetChoreById(id);
+
+            return Ok(chore);
         }
     }
 }

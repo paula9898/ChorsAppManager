@@ -1,5 +1,8 @@
 using ChorsAppManager.Backend.EntityFramework.Data;
+using ChorsAppManager.Backend.Application.ChoresServices;
+using ChorsAppManager.Backend.Application.Repositories;
 using Microsoft.EntityFrameworkCore;
+using ChorsAppManager.Backend.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +11,14 @@ var connectionString = builder.Configuration.GetConnectionString("ChoresAppManag
 builder.Services.AddDbContext<ChoresAppManagerDbContext>(options =>
 {
     options.UseSqlServer(connectionString);
+
+   
 });
+
+builder.Services.AddScoped<IChoresService, ChoresService>();
+builder.Services.AddScoped<IRepository<Chore>, Repository<Chore>>();
+
+//builder.Services.AddScoped<IChoresService, ChoresService>;
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
