@@ -16,5 +16,17 @@ namespace ChorsAppManager.Backend.EntityFramework.Data
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Chore> Chores { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>().HasData(
+                new User { Id = 1, Name = "Paulina" });
+
+            modelBuilder.Entity<Chore>().HasData(
+                new Chore { Id = 1, UserId = 1, Description = "Clean the bathroom" });
+
+        }
     }
 }
