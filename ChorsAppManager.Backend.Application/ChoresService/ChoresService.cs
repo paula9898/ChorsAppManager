@@ -17,14 +17,15 @@ namespace ChorsAppManager.Backend.Application.ChoresService
             _choreRepository = choreRepository;
         }
 
-        Task<ICollection<Chore>> IChoresService.GetAllChores()
+        public async Task<ICollection<Chore>> GetAllChores()
         {
-            throw new NotImplementedException();
+            return await _choreRepository.GetAllChores();
         }
 
-        Task<Chore> IChoresService.GetChoreById(int choreId)
+        public async Task<Chore> GetChoreById(int choreId)
         {
-            throw new NotImplementedException();
+            return await _choreRepository.GetChoreById(choreId);
         }
     }
+
 }
