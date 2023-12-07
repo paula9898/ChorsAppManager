@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace ChorsAppManager.Backend.Model
 {
-    public class User
+    public class UserDto
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string ConfirmedPassword { get; set; }
         public string UserName { get; set; }
-        public ICollection<Chore> Chores { get; set;}//ICollection
     }
 }

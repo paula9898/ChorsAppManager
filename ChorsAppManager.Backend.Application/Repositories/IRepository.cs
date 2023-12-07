@@ -12,5 +12,6 @@ namespace ChorsAppManager.Backend.Application.Repositories
     {
         Task <ICollection<T>> GetAllChores();
         Task <T> GetChoreById(int id);
+        Task AddChore(T entity);
     }
 }

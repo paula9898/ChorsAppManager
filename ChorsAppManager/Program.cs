@@ -12,7 +12,6 @@ builder.Services.AddDbContext<ChoresAppManagerDbContext>(options =>
 {
     options.UseSqlServer(connectionString);
 
-   
 });
 
 builder.Services.AddScoped<IChoresService, ChoresService>();

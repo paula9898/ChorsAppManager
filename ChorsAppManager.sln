@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChorsAppManager.Backend.Ent
 		{3853D285-87B3-4E16-86DB-84409C530DD0} = {3853D285-87B3-4E16-86DB-84409C530DD0}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B2F129D4-6C05-4A58-88DE-A25A51837B39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

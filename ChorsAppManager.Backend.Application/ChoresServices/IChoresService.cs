@@ -10,6 +10,7 @@ namespace ChorsAppManager.Backend.Application.ChoresServices
     public interface IChoresService
     {
         Task<ICollection<Chore>> GetAllChores();
-        Task <Chore> GetChoreById(int choreId);
+        Task<Chore>GetChoreById(int choreId);
+        Task AddChoreAsync(Chore chore);
     }
 }

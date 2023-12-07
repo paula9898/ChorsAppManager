@@ -26,6 +26,11 @@ namespace ChorsAppManager.Backend.Application.ChoresServices
         {
             return await _choreRepository.GetChoreById(choreId);
         }
+
+        public async Task AddChoreAsync(Chore chore)
+        {
+            await _choreRepository.AddChore(chore);
+        }
     }
 
 }

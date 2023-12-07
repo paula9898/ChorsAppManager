@@ -12,6 +12,5 @@ namespace ChorsAppManager.Backend.Model
         public int UserId { get; set; }
         public string Description { get; set; }
         public bool ChoreStatus { get; set; }
-
     }
 }

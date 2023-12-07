@@ -14,7 +14,7 @@ namespace ChorsAppManager.Backend.EntityFramework.Data
         {
 
         }
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }//business domain models
         public DbSet<Chore> Chores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace ChorsAppManager.Backend.EntityFramework.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>().HasData(
-                new User { Id = 1, Name = "Paulina" });
+                new User { Id = 1, FirstName = "Paulina", Email ="otrebskapaulina@gmail.com", Password ="haslo123!", UserName ="poliwoli1976"});
 
             modelBuilder.Entity<Chore>().HasData(
                 new Chore { Id = 1, UserId = 1, Description = "Clean the bathroom" });

@@ -27,5 +27,11 @@ namespace ChorsAppManager.Backend.Application.Repositories
         {
             return await _choresAppManagerDbContext.Set<T>().FindAsync(id);
         }
+
+        public async Task AddChore(T entity)
+        {
+            await _choresAppManagerDbContext.Set<T>().AddAsync(entity);
+            await _choresAppManagerDbContext.SaveChangesAsync();
+        }
     }
 }

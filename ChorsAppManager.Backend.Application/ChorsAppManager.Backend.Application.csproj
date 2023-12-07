@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ChorsAppManager.Backend.EntityFramework\ChorsAppManager.Backend.EntityFramework.csproj" />
     <ProjectReference Include="..\ChorsAppManager.Backend.Entity\ChorsAppManager.Backend.Model.csproj" />
   </ItemGroup>

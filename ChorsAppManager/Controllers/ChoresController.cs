@@ -1,4 +1,5 @@
 using ChorsAppManager.Backend.Application.ChoresServices;
+using ChorsAppManager.Backend.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChorsAppManager.Controllers
@@ -10,7 +11,6 @@ namespace ChorsAppManager.Controllers
         private readonly IChoresService _choreService;
 
         public ChoresController(IChoresService choresService)
-
         {
             _choreService = choresService;
         }
@@ -21,6 +21,15 @@ namespace ChorsAppManager.Controllers
             var chore = await _choreService.GetChoreById(id);
 
             return Ok(chore);
+        }
+
+        [HttpPost("add")]
+
+        public async Task<IActionResult> AddChoreAsync([FromBody] Chore chore)
+        {
+            await _choreService.AddChoreAsync(chore);
+
+            return Ok("Added!");
         }
     }
 }
