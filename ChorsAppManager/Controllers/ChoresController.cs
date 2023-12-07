@@ -24,7 +24,6 @@ namespace ChorsAppManager.Controllers
         }
 
         [HttpPost("add")]
-
         public async Task<IActionResult> AddChoreAsync([FromBody] Chore chore)
         {
             await _choreService.AddChoreAsync(chore);
