@@ -3,6 +3,8 @@ using ChorsAppManager.Backend.Application.ChoresServices;
 using ChorsAppManager.Backend.Application.Repositories;
 using Microsoft.EntityFrameworkCore;
 using ChorsAppManager.Backend.Model;
+using ChorsAppManager.Backend.Application.RegistrationUserService;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +15,12 @@ builder.Services.AddDbContext<ChoresAppManagerDbContext>(options =>
     options.UseSqlServer(connectionString);
 
 });
-
+builder.Services.AddIdentity<User, IdentityRole<int>>()
+    .AddEntityFrameworkStores<ChoresAppManagerDbContext>()
+    .AddDefaultTokenProviders();
 builder.Services.AddScoped<IChoresService, ChoresService>();
 builder.Services.AddScoped<IRepository<Chore>, Repository<Chore>>();
+builder.Services.AddScoped<IRegisterService, RegisterService>();
 
 //builder.Services.AddScoped<IChoresService, ChoresService>;
 builder.Services.AddControllers();

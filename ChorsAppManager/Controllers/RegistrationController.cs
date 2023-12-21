@@ -20,15 +20,13 @@ namespace ChorsAppManager.Backend.WebAPI.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser([FromBody] UserDto model)
         {
-            
-                var result = await _registerService.RegisterUser(model);
+            var result = await _registerService.RegisterUser(model);
 
-                if(result)
-                {
-                   
-                }
-            return Ok("Registration successful");
+            if (result)
+                return Ok("User registered successfully");
+            else
+                return BadRequest("Failed");
+
         }
-
     }
 }

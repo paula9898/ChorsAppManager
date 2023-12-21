@@ -1,4 +1,6 @@
 ﻿using ChorsAppManager.Backend.Model;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace ChorsAppManager.Backend.EntityFramework.Data
 {
-    public class ChoresAppManagerDbContext : DbContext
+    public class ChoresAppManagerDbContext : IdentityDbContext<User, IdentityRole<int>, int>
     {
-        public ChoresAppManagerDbContext(DbContextOptions options) : base(options)
+        public ChoresAppManagerDbContext(DbContextOptions<ChoresAppManagerDbContext> options) : base(options)
         {
 
         }
@@ -22,7 +24,7 @@ namespace ChorsAppManager.Backend.EntityFramework.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>().HasData(
-                new User { Id = 1, FirstName = "Paulina", Email ="otrebskapaulina@gmail.com", Password ="haslo123!", UserName ="poliwoli1976"});
+                new User { Id = 1, FirstName = "Paulina", Email ="otrebskapaulina@gmail.com", UserName ="poliwoli1976"});
 
             modelBuilder.Entity<Chore>().HasData(
                 new Chore { Id = 1, UserId = 1, Description = "Clean the bathroom" });

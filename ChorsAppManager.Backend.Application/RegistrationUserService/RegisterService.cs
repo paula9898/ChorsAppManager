@@ -33,7 +33,7 @@ namespace ChorsAppManager.Backend.Application.RegistrationUserService
             {
                 UserName = model.UserName,
 
-                Password = model.Password,
+                //Password = model.Password,
 
                 Email = model.Email
             };
