@@ -15,8 +15,15 @@ builder.Services.AddDbContext<ChoresAppManagerDbContext>(options =>
     options.UseSqlServer(connectionString);
 
 });
-builder.Services.AddIdentity<User, IdentityRole<int>>()
-    .AddEntityFrameworkStores<ChoresAppManagerDbContext>()
+builder.Services.AddIdentity<User, IdentityRole<int>>(opts =>
+{
+opts.Password.RequiredLength = 5;
+opts.Password.RequireNonAlphanumeric = false;
+opts.Password.RequireLowercase = true;
+opts.Password.RequireUppercase = true;
+opts.Password.RequireDigit = true;
+opts.User.AllowedUserNameCharacters = null;
+}).AddEntityFrameworkStores<ChoresAppManagerDbContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddScoped<IChoresService, ChoresService>();
 builder.Services.AddScoped<IRepository<Chore>, Repository<Chore>>();
