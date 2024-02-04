@@ -1,10 +1,10 @@
 using ChorsAppManager.Backend.EntityFramework.Data;
-using ChorsAppManager.Backend.Application.ChoresServices;
 using ChorsAppManager.Backend.Application.Repositories;
 using Microsoft.EntityFrameworkCore;
 using ChorsAppManager.Backend.Model;
 using ChorsAppManager.Backend.Application.RegistrationUserService;
 using Microsoft.AspNetCore.Identity;
+using ChorsAppManager.Backend.Application.ChoresServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +22,7 @@ opts.Password.RequireNonAlphanumeric = false;
 opts.Password.RequireLowercase = true;
 opts.Password.RequireUppercase = true;
 opts.Password.RequireDigit = true;
-opts.User.AllowedUserNameCharacters = null;
+opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 }).AddEntityFrameworkStores<ChoresAppManagerDbContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddScoped<IChoresService, ChoresService>();

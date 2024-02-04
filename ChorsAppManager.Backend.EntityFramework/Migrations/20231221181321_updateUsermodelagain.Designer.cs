@@ -4,6 +4,7 @@ using ChorsAppManager.Backend.EntityFramework.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChorsAppManager.Backend.EntityFramework.Migrations
 {
     [DbContext(typeof(ChoresAppManagerDbContext))]
-    partial class ChoresAppManagerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231221181321_updateUsermodelagain")]
+    partial class updateUsermodelagain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,7 +135,7 @@ namespace ChorsAppManager.Backend.EntityFramework.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b2e51003-e6af-4335-b778-ccea346578f9",
+                            ConcurrencyStamp = "95679dce-e70e-4ec4-8c96-cd4245bd6e01",
                             Email = "otrebskapaulina@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Paulina",
